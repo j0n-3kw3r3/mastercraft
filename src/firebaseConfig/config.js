@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyActddZRAwVGcXwaNZBILmBDgm7jI_00gM",
-  authDomain: "mastercraft-40507.firebaseapp.com",
-  projectId: "mastercraft-40507",
-  storageBucket: "mastercraft-40507.appspot.com",
-  messagingSenderId: "835045744522",
-  appId: "1:835045744522:web:937f32d684551826e3f273",
+export const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACREACT_APP_MESSAGING_SENDER_IDT_APP_API_KEY,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase
