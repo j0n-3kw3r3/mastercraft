@@ -21,12 +21,12 @@ export default function SignUp() {
     <div className="grid grid-cols-2 h-full bg-[#e0e7ff]">
       <div>
         <div className="flex mt-24 justify-center">
-          <div className="flex   border-[#ad772b]  border-t-2 border-b-2 w-[80%] relative  justify-center items-center z-10 ">
+          <div className="flex   border-[#ad772b]  border-t-2 border-b-2 w-[80%] relative  justify-center items-center z-10 shadow-sm ">
             <h1 className=" brand w-full   tracking-[1.1rem] text-center z-20 text-gray-700 uppercase  ">
               Mastercraft
             </h1>
-            <div className="absolute w-[150px] h-[150px]  rounded-full bg-[#ad772b] ring-8 ring-[#e0e7ff] z-10 ">
-              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 ">
+            <div className="absolute w-[150px] h-[150px]  rounded-full bg-[#ad772b] ring-8 ring-[#e0e7ff] z-10 shadow-lg ">
+              <p className="text-white  w-full text-sm tracking-[.12rem] text-center absolute bottom-8 uppercase left-0 right-0 font-[600] ">
                 productions
               </p>{" "}
             </div>

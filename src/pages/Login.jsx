@@ -29,7 +29,7 @@ const Login = () => {
             Mastercraft
           </h1>
             <div className="absolute w-[150px] h-[150px]  rounded-full bg-[#ad772b] ring-8 ring-indigo-200 z-10 ">
-              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 ">productions</p> </div>
+              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 font-bold ">productions</p> </div>
         </div>
         </div>
 
