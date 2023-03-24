@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import { userSchema } from "../schemas";
 
-
 const Login = () => {
   const onSubmit = (values, actions) => {
     console.log("submitted");
@@ -23,14 +22,16 @@ const Login = () => {
     <div className="grid grid-cols-2 h-full bg-indigo-200">
       <div className="h-full">
         <div className="flex mt-24 justify-center">
-
-        <div className="flex   border-[#ad772b]  border-t-2 border-b-2 w-[80%] relative  justify-center items-center z-10 ">
-          <h1 className=" brand w-full   tracking-[1.1rem] text-center z-20 text-gray-700 uppercase  ">
-            Mastercraft
-          </h1>
+          <div className="flex   border-[#ad772b]  border-t-2 border-b-2 w-[80%] relative  justify-center items-center z-10 ">
+            <h1 className=" brand w-full   tracking-[1.1rem] text-center z-20 text-gray-700 uppercase  ">
+              Mastercraft
+            </h1>
             <div className="absolute w-[150px] h-[150px]  rounded-full bg-[#ad772b] ring-8 ring-indigo-200 z-10 ">
-              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 font-bold ">productions</p> </div>
-        </div>
+              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 font-bold ">
+                productions
+              </p>{" "}
+            </div>
+          </div>
         </div>
 
         <div className="flex h-[70%]   items-center justify-center py-2 px-4 sm:px-6 lg:px-8">
