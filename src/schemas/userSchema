@@ -1,7 +1,0 @@
-import { object, string, date } from "yup";
-
-export const userSchema = object({
-  password: string().required(),
-  email: string().email(),
-  createdOn: date().default(() => new Date()),
-});

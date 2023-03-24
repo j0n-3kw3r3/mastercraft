@@ -1,18 +1,37 @@
-import React, { useRef } from "react";
-// import { LockClosedIcon } from "@heroicons/react/20/solid";
+import { useFormik } from "formik";
+import { Link } from "react-router-dom";
+import { userSchema } from "../schemas";
 
-const Login=()=> {
-  const email  = useRef();
-  const password = useRef();
-  
 
-  
+const Login = () => {
+  const onSubmit = (values, actions) => {
+    console.log("submitted");
+    actions.resetForm();
+  };
+
+  const { values, handleBlur, handleChange, handleSubmit, touched, errors } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: userSchema,
+      onSubmit,
+    });
+
   return (
     <div className="grid grid-cols-2 h-full bg-indigo-200">
       <div className="h-full">
-        <h1 className=" mt-24 text-center text-3xl font-bold tracking-tight text-gray-900">
-          Mastercraft Production
-        </h1>
+        <div className="flex mt-24 justify-center">
+
+        <div className="flex   border-[#ad772b]  border-t-2 border-b-2 w-[80%] relative  justify-center items-center z-10 ">
+          <h1 className=" brand w-full   tracking-[1.1rem] text-center z-20 text-gray-700 uppercase  ">
+            Mastercraft
+          </h1>
+            <div className="absolute w-[150px] h-[150px]  rounded-full bg-[#ad772b] ring-8 ring-indigo-200 z-10 ">
+              <p className="text-white  w-full text-sm tracking-[.2rem] text-center absolute bottom-8 uppercase left-0 right-0 ">productions</p> </div>
+        </div>
+        </div>
 
         <div className="flex h-[70%]   items-center justify-center py-2 px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-md space-y-8">
@@ -21,7 +40,7 @@ const Login=()=> {
                 Sign in your account
               </h2>
             </div>
-            <form className="mt-8 space-y-6" action="#" method="POST">
+            <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               <input type="hidden" name="remember" defaultValue="true" />
               <div className="-space-y-px rounded-md shadow-sm">
                 <div>
@@ -34,10 +53,19 @@ const Login=()=> {
                     type="email"
                     autoComplete="email"
                     required
-                    className="relative block w-full rounded-t-md border-0 py-1.5 pl-2 text-gray-900 ring-1  ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className={
+                      errors.email && touched.email
+                        ? " focus:ring-red-600 ring-red-600 relative block w-full rounded-t-md border-0 py-1.5 pl-2 text-gray-900 ring-1  ring-inset  placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset  outline-none sm:text-sm sm:leading-6"
+                        : "relative block w-full rounded-t-md border-0 py-1.5 pl-2 text-gray-900 ring-1  ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 outline-none sm:text-sm sm:leading-6"
+                    }
                     placeholder="Email address"
-                    ref={email}
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.email && touched.email && (
+                    <p className="text-xs mb-2 text-red-600">{errors.email}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="password" className="sr-only">
@@ -49,10 +77,19 @@ const Login=()=> {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="relative block w-full rounded-b-md border-0 py-1.5 pl-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className={
+                      errors.password && touched.password
+                        ? " focus:ring-red-600 ring-red-600 relative block w-full rounded-b-md border-0 py-1.5 pl-2 text-gray-900 ring-1 ring-inset  placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset outline-none  sm:text-sm sm:leading-6"
+                        : "relative block w-full rounded-b-md border-0 py-1.5 pl-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset outline-none focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    }
                     placeholder="Password"
-                    ref={password}
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.password && touched.password && (
+                    <p className="text-xs   text-red-600">{errors.password}</p>
+                  )}
                 </div>
               </div>
 
@@ -102,13 +139,11 @@ const Login=()=> {
         <img
           src="/david.jpg"
           alt=""
-          srcset=""
           className="h-[100%] w-[100%] object-cover  "
         />
       </div>
     </div>
   );
-}
+};
 
-
-export default Login
+export default Login;

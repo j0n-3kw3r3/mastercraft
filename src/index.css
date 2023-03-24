@@ -15,3 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.brand{
+  font-family: "Aladin";
+  font-size: 3.5rem;
+  font-weight: 500;
+}
