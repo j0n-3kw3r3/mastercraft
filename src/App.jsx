@@ -1,21 +1,11 @@
-import RouterComponent from "./config/router"
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-
-
+import RouterComponent from "./config/router";
 
 function App() {
-  return (
-    <div className="App h-[100vh] w-full ">
-      <Router>
-      <RouterComponent/>
-      </Router>
-    </div>
-  );
+	return (
+		<div className="App h-[100vh] w-full ">
+			<RouterComponent />
+		</div>
+	);
 }
 
 export default App;
