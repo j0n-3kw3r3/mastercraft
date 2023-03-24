@@ -4,13 +4,19 @@ import React from "react";
 export default function SignUp() {
   return (
     <div className="grid grid-cols-2 h-full bg-[#e0e7ff]">
-      <div className="flex h-full  min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="flex mt-6 -mr-6 text-3xl font-bold tracking-tight text-gray-900">
+      <div>
+  <h1 className="mt-12  text-center text-3xl font-bold tracking-tight text-gray-900">
           Mastercraft Production
         </h1>
+    
+      <div className="flex h-[70%]   items-center justify-center py-2 px-4 sm:px-6 lg:px-8">
+        
         <div className="w-full max-w-md space-y-8">
           <div>
-            
+
+            <h2 className="my-6 text-center text-2xl font-bold tracking-tight text-gray-900">
+              Create an account
+            </h2>
           </div>
           <form className="mt-8 space-y-6" action="#" method="POST">
             <input type="hidden" name="remember" defaultValue="true" />
@@ -85,8 +91,9 @@ export default function SignUp() {
             </div>
           </form>
         </div>
+        </div>
       </div>
-      <div className="h-full overflow-hidden">
+      <div className="h-full overflow-hidden shadow-2xl">
         <img
           src="/pieta.jpg"
           alt=""

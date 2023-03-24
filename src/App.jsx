@@ -1,11 +1,19 @@
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import RouterComponent from "./config/router"
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+
 
 
 function App() {
   return (
     <div className="App h-[100vh] w-full ">
-      <Login/>
+      <Router>
+      <RouterComponent/>
+      </Router>
     </div>
   );
 }
